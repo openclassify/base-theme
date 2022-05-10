@@ -19,41 +19,16 @@ function phoneMask(fields) {
         });
 
         addMask(iti, inputQuery);
-        $(inputQuery).on("countrychange", function(event) {
+        $(inputQuery).on("countrychange", function (event) {
             iti.setNumber("");
             addMask(iti, inputQuery);
         });
     });
 
-    function addMask(iti, inputQuery){
+    function addMask(iti, inputQuery) {
         let selectedCountryData = iti.getSelectedCountryData();
         let newPlaceholder = intlTelInputUtils.getExampleNumber(selectedCountryData.iso2, true, intlTelInputUtils.numberFormat.INTERNATIONAL);
-        // $(inputQuery).inputmask({ mask: newPlaceholder.replace(/[0-9+]/ig,'9'), keepStatic: false });
     }
-
-    // var fields_arr = fields.split(',');
-    // $.each(fields_arr, function (index, value) {
-    //     maskPhone($(value).attr('name'))
-    // });
-
-
-    // $(fields).on('countrychange', function (e) {
-    //     maskPhone($(this).attr('name'))
-    // });
-
-    // function maskPhone(name) {
-    //     if ( $("input[name='" + name + "']").length ) {
-    //         var currentMask = $("input[name='" + name + "']").attr('placeholder');
-    //         if(currentMask) {
-    //             $("input[name='" + name + "']").mask(currentMask.replace(/[0-9+]/ig, '9'), {
-    //                 autoclear: true,
-    //                 clearIncomplete: true
-    //             });
-    //         }
-    //     }
-    // }
-
-
 }
 
 function controlNumber(inputQuery) {
@@ -69,6 +44,5 @@ function controlNumber(inputQuery) {
             })
         }
     })
-
     return iti.isValidNumber();
 }
