@@ -18,7 +18,6 @@ function phoneMask(fields) {
             }
         });
 
-        addMask(iti, inputQuery);
         $(inputQuery).on("countrychange", function(event) {
             iti.setNumber("");
             addMask(iti, inputQuery);
