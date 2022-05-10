@@ -28,7 +28,7 @@ function phoneMask(fields) {
     function addMask(iti, inputQuery){
         let selectedCountryData = iti.getSelectedCountryData();
         let newPlaceholder = intlTelInputUtils.getExampleNumber(selectedCountryData.iso2, true, intlTelInputUtils.numberFormat.INTERNATIONAL);
-        $(inputQuery).inputmask({ mask: newPlaceholder.replace(/[0-9+]/ig,'9'), keepStatic: false });
+        // $(inputQuery).inputmask({ mask: newPlaceholder.replace(/[0-9+]/ig,'9'), keepStatic: false });
     }
 
     // var fields_arr = fields.split(',');
