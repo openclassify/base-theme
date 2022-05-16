@@ -74,5 +74,7 @@ return [
 
     'news_title' => 'Sektörel Gelişmeler :name\'da',
     'all_news' => 'Tüm İçerikler',
-
+    'search_posts'=> 'Makale Ara',
+    'newest' => 'Önce Yeni',
+    'oldest' => 'Önce Eski',
 ];

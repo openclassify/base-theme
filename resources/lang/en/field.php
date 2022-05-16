@@ -75,4 +75,7 @@ return [
 
     'news_title' => 'Sectoral Developments All in :name',
     'all_news' => 'All News',
+    'search_posts'=> 'Search Posts',
+    'newest' => 'Newest',
+    'oldest' => 'Oldest',
 ];
