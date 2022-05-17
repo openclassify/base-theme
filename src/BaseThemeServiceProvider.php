@@ -12,4 +12,7 @@ class BaseThemeServiceProvider extends AddonServiceProvider
         'anomaly.module.users::password/forgot' => 'visiosoft.theme.base::addons/anomaly/users-module/password/forgot',
         'anomaly.module.users::password/reset' => 'visiosoft.theme.base::addons/anomaly/users-module/password/reset',
     ];
+    protected $plugins= [
+        BaseThemePlugin::class,
+    ];
 }

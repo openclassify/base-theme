@@ -29,8 +29,7 @@
                             {% set posts = entries('posts').orderBy('created_at','ASC').paginate(6) %}
                             {{ trans('theme::field.oldest') }}
                         {% else %}
-                            {% set ids = entries('posts').searchInTitlePluck(app.request.get("search")) %}
-                            {% set posts = entries('posts','posts').whereIn('posts_posts.id',ids).paginate(6) %}
+                            {% set posts = searchPost(app.request.get("search")).paginate(6) %}
                             {{ trans('theme::field.newest') }}
                         {% endif %}
                     </span>
@@ -50,20 +49,21 @@
 
             </div>
             {% for post in posts %}
+                {% set cover_image = file(post.getRelations.entry.cover_image_id) %}
                 <div class="col-xl-4 col-lg-6 col-12 p-3">
                     <a href="{{ post.route('view') }}" class="text-decoration-none m-3">
-                        <div class="cover-image rounded" style="background-image: url('{{ post.cover_image.make.url ?: img(noImage).url}}')">
+                        <div class="cover-image rounded" style="background-image: url('{{ cover_image.make.url ?: img(noImage).url}}')">
                         </div>
                         <div class="post-category_name mb-2">
-                            {{ post.category.name }}
+                            {{ post.category.first().name }}
                         </div>
 
                         <div class="my-2 fw-400 textBlack single-line d-flex align-items-center">
                             <div class="author-image">
-                                {{ img(post.author.file.url ?? 'visiosoft.module.profile::images/profile-default.png').class('w-100 rounded-circle')|raw  }}
+                                {{ img(post.author.first().file.url ?? 'visiosoft.module.profile::images/profile-default.png').class('w-100 rounded-circle')|raw  }}
                             </div>
                             <div class="author-name ml-2">
-                                {{ post.author.display_name }}
+                                {{ post.author.first().display_name }}
                             </div>
                             <div class="post-created_at">
                                 {{ post.created_at|slice(0,10) }}
