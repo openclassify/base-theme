@@ -135,7 +135,7 @@
                                                 {% block salutation %}
                                                     <!-- Salutation -->
                                                     <p style="{{ style['paragraph'] }}">
-                                                        {{ salutation ?:'Regards' }},<br>{{ setting_value('streams::name','Visiosoft LTD.') }}
+                                                        {{ trans('visiosoft.module.notifications::field.regards') }},<br>{{ setting_value('streams::name','Visiosoft LTD.') }}
                                                     </p>
                                                 {% endblock %}
 
