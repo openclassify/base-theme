@@ -22,6 +22,9 @@
 {{ asset_add("theme.js", "visiosoft.theme.base::js/theme/modal.js") }}
 {{ asset_add("theme.js", "visiosoft.theme.base::js/offline.js") }}
 
+{# Pop-up Extension Script #}
+{{ addBlock('partials/popup/script')|raw }}
+
 {{ asset_script("theme.js") }}
 
 {{ addBlock('theme/partials/assets/additional-assets')|raw }}
