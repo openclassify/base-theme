@@ -17,10 +17,11 @@ class PostFieldsSeeder extends Seeder
     private $streamRepository;
 
     public function __construct(
-        FieldRepositoryInterface $fieldRepository,
+        FieldRepositoryInterface      $fieldRepository,
         AssignmentRepositoryInterface $assignmentRepository,
-        StreamRepositoryInterface $streamRepository
-    ) {
+        StreamRepositoryInterface     $streamRepository
+    )
+    {
         $this->fieldRepository = $fieldRepository;
         $this->assignmentRepository = $assignmentRepository;
         $this->streamRepository = $streamRepository;
@@ -29,34 +30,51 @@ class PostFieldsSeeder extends Seeder
     public function run()
     {
         if ($stream = $this->streamRepository->findBySlugAndNamespace('default_posts', 'posts')) {
+
+            // Create content ads
             // Create cover image field
-            $coverImageField = [
-                'name' => trans('visiosoft.theme.base::field.cover_image'),
-                'namespace' => 'posts',
-                'slug' => 'cover_image',
-                'type' => 'anomaly.field_type.file',
-                'config' => [
-                    'folders' => ['images'],
+            $postFields = [
+                [
+                    'name' => trans('visiosoft.theme.base::field.cover_image'),
+                    'namespace' => 'posts',
+                    'slug' => 'images',
+                    'type' => 'anomaly.field_type.file',
+                    'config' => [
+                        'folders' => ['images'],
+                    ],
                 ],
+                [
+                    'name' => trans('visiosoft.theme.base::field.post_advs'),
+                    'namespace' => 'posts',
+                    'slug' => 'advs',
+                    'type' => 'visiosoft.field_type.multiple',
+                    'config' => [
+                        'mode' => 'lookup',
+                        'related' => AdvModel::class,
+                    ],
+                ]
+
             ];
 
-            if (!$field = $this->fieldRepository->findBySlugAndNamespace($coverImageField['slug'], $coverImageField['namespace'])) {
-                $field = $this->fieldRepository->create([
-                    'name' => $coverImageField['name'],
-                    'namespace' => $coverImageField['namespace'],
-                    'slug' => $coverImageField['slug'],
-                    'type' => $coverImageField['type'],
-                    'config' => $coverImageField['config'],
-                    'locked' => 0
-                ]);
-            }
+            foreach ($postFields as $postField) {
+                if (!$field = $this->fieldRepository->findBySlugAndNamespace($postField['slug'], $postField['namespace'])) {
+                    $field = $this->fieldRepository->create([
+                        'name' => $postField['name'],
+                        'namespace' => $postField['namespace'],
+                        'slug' => $postField['slug'],
+                        'type' => $postField['type'],
+                        'config' => $postField['config'],
+                        'locked' => 0
+                    ]);
+                }
 
-            if (!$this->assignmentRepository->findByStreamAndField($stream, $field)) {
-                $this->assignmentRepository->create([
-                    'stream_id' => $stream->getId(),
-                    'field_id' => $field->id,
-                    'label' => $coverImageField['name'],
-                ]);
+                if (!$this->assignmentRepository->findByStreamAndField($stream, $field)) {
+                    $this->assignmentRepository->create([
+                        'stream_id' => $stream->getId(),
+                        'field_id' => $field->id,
+                        'label' => $postField['name'],
+                    ]);
+                }
             }
         }
     }
