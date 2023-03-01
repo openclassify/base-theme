@@ -78,5 +78,7 @@ return [
     'search_posts'=> 'Search Posts',
     'newest' => 'Newest',
     'oldest' => 'Oldest',
-    'post_advs' =>  'Advs'
+    'post_advs' =>  'Advs',
+    'prev_post' => 'Previous Post',
+    'next_post' => 'Next Post',
 ];

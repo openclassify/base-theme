@@ -77,5 +77,7 @@ return [
     'search_posts'=> 'Makale Ara',
     'newest' => 'Önce Yeni',
     'oldest' => 'Önce Eski',
-    'post_advs' => 'İlanlar'
+    'post_advs' => 'İlanlar',
+    'prev_post' => 'Önceki Yazı',
+    'next_post' => 'Sonraki Yazı',
 ];
