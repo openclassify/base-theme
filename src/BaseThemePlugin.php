@@ -30,6 +30,13 @@
                             ->whereIn('posts_posts.id', $post_ids);
                     }
                 ),
+                new \Twig_SimpleFunction(
+                    'getDomains',
+                    function () {
+                        $domains = setting_value('visiosoft.theme.base::domains_allowed_iframe_access');
+                        return implode(' ', $domains);
+                    }
+                )
             ];
         }
     }

@@ -4,6 +4,13 @@
 <meta name="description"
       content="{{ (template.get('meta_description') ?: setting_value('streams::description'))|slice(0,160) }}"/>
 <meta name="keywords" content="{{ template.get('meta_keywords') }}" />
+
+{% set allowed_domains = getDomains() %}
+
+{% if not empty(allowed_domains) %}
+<meta http-equiv="Content-Security-Policy" content="frame-ancestors 'self' {{ allowed_domains }}">
+{% endif %}
+
 {{ setting_value('visiosoft.module.advs::google_statistic_code')|raw }}
 <!-- Meta Tags -->
 
