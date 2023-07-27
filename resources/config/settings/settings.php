@@ -77,4 +77,7 @@ return [
             'default_value' => 500
         ],
     ],
+    'domains_allowed_iframe_access'=> [
+        'type' => 'anomaly.field_type.tags',
+    ]
 ];

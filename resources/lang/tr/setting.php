@@ -46,4 +46,7 @@ return [
     'gallery_box_height' => [
         'name' => 'Galeri Yüsekliği',
     ],
+    'domains_allowed_iframe_access' => [
+        'name' => 'Iframe erişimine izin verilen alan adları'
+    ]
 ];
