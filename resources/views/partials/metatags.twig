@@ -5,10 +5,10 @@
       content="{{ (template.get('meta_description') ?: setting_value('streams::description'))|slice(0,160) }}"/>
 <meta name="keywords" content="{{ template.get('meta_keywords') }}" />
 
-{% set allowed_domains = getDomains() %}
+{% set allowed_domains = setting_value('visiosoft.theme.base::domains_allowed_iframe_access') %}
 
 {% if not empty(allowed_domains) %}
-<meta http-equiv="Content-Security-Policy" content="frame-ancestors 'self' {{ allowed_domains }}">
+<meta http-equiv="Content-Security-Policy" content="frame-ancestors 'self' {% for domain in allowed_domains %} {{domain}}{% endfor%} ">
 {% endif %}
 
 {{ setting_value('visiosoft.module.advs::google_statistic_code')|raw }}
