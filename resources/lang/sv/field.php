@@ -43,6 +43,10 @@ return [
     'login_with_phone_number' => 'Logga in med telefonnummer',
     'login_with_email_address' => 'Logga in med e-postadress',
 
+    // Share
+    'share_on_facebook' => 'Share on Facebook',
+    'share_on_twitter' => 'Share on Twitter',
+
     // Side menu links
     'company_directory' => 'Företagskatalog',
     'popular_ads' => 'Populära annonser',
@@ -51,15 +55,30 @@ return [
     'sms' => 'Skicka textmeddelande (SMS)',
     'mail' => 'Skicka brev',
 
+    //Related
+    'related_posts' => 'Related Posts',
+
     // Register instruction seed
     'register_instructions' => 'Registrera instruktioner',
     'list' => 'Lista',
     'instruction_description' => 'Instruktionsbeskrivning',
     'instruction_list' => 'Instruktionslista',
 
+    // Posts seeder
+    'cover_image' => 'Cover Image',
+
     // Offline
     'connection_problem' => 'Connection problem',
     'your_internet_connection_is_broken' => 'Your internet connection is broken,',
     'we_miss_you_so_much_already' => 'we miss you so much already!',
     'try_again' => 'Try again',
+
+    'news_title' => 'Sectoral Developments All in :name',
+    'all_news' => 'All News',
+    'search_posts'=> 'Search Posts',
+    'newest' => 'Newest',
+    'oldest' => 'Oldest',
+    'post_advs' =>  'Advs',
+    'prev_post' => 'Previous Post',
+    'next_post' => 'Next Post',
 ];
