@@ -44,8 +44,8 @@ return [
     'login_with_email_address' => 'Logga in med e-postadress',
 
     // Share
-    'share_on_facebook' => 'Share on Facebook',
-    'share_on_twitter' => 'Share on Twitter',
+    'share_on_facebook' => 'Dela på Facebook',
+    'share_on_twitter' => 'Dela på Twitter',
 
     // Side menu links
     'company_directory' => 'Företagskatalog',
@@ -56,7 +56,7 @@ return [
     'mail' => 'Skicka brev',
 
     //Related
-    'related_posts' => 'Related Posts',
+    'related_posts' => 'Relaterade inlägg',
 
     // Register instruction seed
     'register_instructions' => 'Registrera instruktioner',
@@ -65,20 +65,20 @@ return [
     'instruction_list' => 'Instruktionslista',
 
     // Posts seeder
-    'cover_image' => 'Cover Image',
+    'cover_image' => 'Omslagsbild',
 
     // Offline
-    'connection_problem' => 'Connection problem',
-    'your_internet_connection_is_broken' => 'Your internet connection is broken,',
-    'we_miss_you_so_much_already' => 'we miss you so much already!',
-    'try_again' => 'Try again',
+    'connection_problem' => 'Anslutningsproblem',
+    'your_internet_connection_is_broken' => 'Din internetanslutning är bruten,',
+    'we_miss_you_so_much_already' => 'vi saknar dig redan så mycket!',
+    'try_again' => 'Försök igen',
 
-    'news_title' => 'Sectoral Developments All in :name',
-    'all_news' => 'All News',
-    'search_posts'=> 'Search Posts',
-    'newest' => 'Newest',
-    'oldest' => 'Oldest',
+    'news_title' => 'Sektoriell utveckling Allt i :name',
+    'all_news' => 'Alla nyheter',
+    'search_posts'=> 'Sök efter inlägg',
+    'newest' => 'Nyaste',
+    'oldest' => 'Äldst',
     'post_advs' =>  'Advs',
-    'prev_post' => 'Previous Post',
-    'next_post' => 'Next Post',
+    'prev_post' => 'Tidigare inlägg',
+    'next_post' => 'Nästa inlägg',
 ];
