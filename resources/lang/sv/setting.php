@@ -42,5 +42,11 @@ return [
     ],
 	'default_country' => [
 		'name' => 'Registrera sida, standardland för telefon',
-	]
+	],
+    'gallery_box_height' => [
+        'name' => 'Galleri Box Höjd',
+    ],
+    'domains_allowed_iframe_access' => [
+        'name' => 'Domäner tillåtna iframe-åtkomst'
+    ]
 ];
