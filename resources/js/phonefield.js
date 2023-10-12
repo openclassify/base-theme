@@ -1,6 +1,9 @@
 function phoneMask(fields) {
-    if (typeof (allowed_cities) != "undefined") {
-        var onlyCountriesOption = allowed_cities ? {onlyCountries: allowed_cities} : {};
+
+    var onlyCountriesOption = {};
+
+    if (typeof (allowed_cities) != "undefined" && allowed_cities) {
+        onlyCountriesOption = {onlyCountries: allowed_cities};
     }
 
     var initialCountry = (typeof country_default !== "undefined") ? country_default : 'auto';
