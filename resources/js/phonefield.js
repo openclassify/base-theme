@@ -1,12 +1,15 @@
 function phoneMask(fields) {
 
     var onlyCountriesOption = {};
+    var initialCountry = 'auto';
 
     if (typeof (allowed_cities) != "undefined" && allowed_cities) {
         onlyCountriesOption = {onlyCountries: allowed_cities};
     }
 
-    var initialCountry = (typeof country_default !== "undefined") ? country_default : 'auto';
+    if (typeof (country_default) != "undefined") {
+        initialCountry = country_default;
+    }
 
     var country = document.getElementById('default-phone-country')
         ? document.getElementById('default-phone-country').innerText : null;
