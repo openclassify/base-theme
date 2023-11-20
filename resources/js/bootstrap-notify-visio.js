@@ -1,5 +1,23 @@
-const Toast = {
-    fire: function (message, type) {
+class ToastClass {
+    constructor() {
+        this._allowDismiss = false;
+        this._newestOnTop = true;
+        this._showProgressbar = true;
+        this._delay = 3000;
+        this._position = null
+    }
+
+    setAllowDismiss = (allow) => this._allowDismiss = allow;
+
+    setNewestOnTop = (isOnTop) => this._newestOnTop = isOnTop;
+
+    setShowProgressbar = (show) => this._showProgressbar = show;
+
+    setPosition = (position) => this._position = position
+
+    setDelay = (delay) => this._delay = delay
+
+    fire = (message, type) => {
 
         $('body').addClass('swal2-shown swal2-toast-shown');
 
@@ -30,11 +48,11 @@ const Toast = {
             message: message,
         }, {
             element: '.swal2-container',
-            position: null,
-            allow_dismiss: false,
-            newest_on_top: true,
-            showProgressbar: true,
-            delay: 3000,
+            position: this._position,
+            allow_dismiss: this._allow_dismiss,
+            newest_on_top: this._newest_on_top,
+            showProgressbar: this._showProgressbar,
+            delay: this._delay,
             animate: {
                 enter: 'animated fadeInRight',
                 exit: 'animated fadeOutRight'
@@ -55,3 +73,5 @@ const Toast = {
         });
     }
 }
+
+const Toast = new ToastClass();
