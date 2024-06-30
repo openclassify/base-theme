@@ -14,7 +14,7 @@
         public function getFunctions()
         {
             return [
-                new \Twig_SimpleFunction(
+                new \Twig\TwigFunction(
                     'searchPost',
                     function ($keyword) {
 
